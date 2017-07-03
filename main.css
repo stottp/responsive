@@ -4,7 +4,7 @@ html {
 
 
 @media screen and (max-width: 450px) {
-    .hero-image {
+    html {
         background: url(images/bg_small.png) no-repeat center center fixed;
         -webkit-background-size: cover;
         -moz-background-size: cover;
@@ -23,14 +23,14 @@ html {
 }
 
 @media screen and (min-width: 701px) {
+    html {
+            background: url(images/bg.png) no-repeat center center fixed;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+        }
     body {
         background-color: lightgreen;
-    }
-    .hero-image {
-        background: url(images/bg.png) no-repeat center center fixed;
-        -webkit-background-size: cover;
-        -moz-background-size: cover;
-        -o-background-size: cover;
-        background-size: cover;
     }
 }
