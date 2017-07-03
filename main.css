@@ -13,16 +13,7 @@ html {
     }
 }
 
-
-@media screen and (max-width: 700px) and (orientation: landscape) {
-    background: url(images/bg.png) no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-}
-
-@media screen and (min-width: 701px) {
+@media screen and (min-width: 451px) {
     html {
             background: url(images/bg.png) no-repeat center center fixed;
             -webkit-background-size: cover;
@@ -33,4 +24,12 @@ html {
     body {
         background-color: lightgreen;
     }
+}
+
+@media screen and (max-width: 700px) and (orientation: landscape) {
+    background: url(images/bg.png) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
