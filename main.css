@@ -42,7 +42,7 @@ img {
     body {
         background-color: lightgreen;
     }
-} */
+}
 
 @media screen and (max-width: 700px) and (orientation: landscape) {
     background: url(images/bg.png) no-repeat center center fixed;
@@ -50,4 +50,4 @@ img {
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-}
+}*/
