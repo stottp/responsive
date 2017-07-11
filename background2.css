@@ -13,7 +13,7 @@ body
 }
 
 body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6,
-pre, form, fieldset, input, textarea, p, blockquote, th, td {
+pre, form, fieldset, label, input, button, textarea, p, blockquote, th, td {
     padding: 0;
     margin: 0;
 }
@@ -27,6 +27,7 @@ Flex Box
 
 .container {
     display: flex;
+    display: -webkit-flex;
     flex-wrap: wrap;
     height: 100%;
 }
@@ -47,34 +48,50 @@ Flex Box
     height: 10%;
 }
 
-      .dark_blue {
-        background-color: #2A457A;
-        color: #efefef;
-      }
+.dark_blue {
+    background-color: #2A457A;
+    color: #efefef;
+}
 
-      .light_blue {
-        background-color: #099DD9;
-      }
+.light_blue {
+background-color: #1fb3cf;
+}
 
-      .green {
-        background-color: #0C8542;
-      }
+.light_blue_gradient {
+    background: linear-gradient(135deg, #1fb3cf 0, #304999 100%);
+}
 
-      .lime {
-        background-color: rgb(179, 210, 52);
-      }
+.green {
+background-color: #0C8542;
+}
 
-      .seafoam {
-        background-color: rgb(77, 190, 161);
-      }
+.lime {
+background-color: rgb(179, 210, 52);
+}
 
-      .red {
-        background-color: #EC1D3B;
-      }
+.seafoam {
+background-color: rgb(77, 190, 161);
+}
 
-      .orange {
-        background-color: #F79420;
-      }
+.red {
+background-color: #EC1D3B;
+}
+
+.orange {
+background-color: #F79420;
+}
+
+.black {
+background-color: #000000;
+}
+
+.complementary {
+    background-color: #cf3b1f;
+}
+
+.triadic {
+    background-color: #b3cf1f;
+}
 
 
 
@@ -86,12 +103,16 @@ Text
 */
 
 .title {
-  font-size: 2.5em;
+  font-size: 1.75em;
   color: #ffffff;
   -webkit-justify-content: center; /* Safari 6.1+ */
   text-align: center;
 }
 
+
+.opacity {
+    opacity: 1.0;
+}
 
 /*
 ***************************
@@ -111,6 +132,13 @@ background-hero
     flex-wrap: wrap;
 }
 
+.background-box {
+    width: 100%;
+    height: 90%;
+    /* height: 90vmax;
+    width: 100vmax; */
+}
+
 .centre {
     display: -ms-flexbox;
     display: -webkit-flex;
@@ -128,7 +156,13 @@ background-hero
 }
 
 .background-test {
-    background: linear-gradient(135deg, #1fb3cf 0, #304999 100%);
+    background:
+    url(images/Small_1x_Design.png) no-repeat center center scroll; */ change scroll to fixed for parrelx scrolling */
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    /* linear-gradient(135deg, #1fb3cf 0, #304999 100%), */
 }
 
 .background-gradient {
@@ -160,25 +194,17 @@ Form
 */
 
 .main-form {
+    display: -webkit-flex;
     display: flex;
-    flex-wrap: nowrap;
+    -webkit-flex-direction: column /* works with row or column */
+    flex-direction: column;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-justify-content: center;
+    justify-content: center;
     width: 100%;
+    margin: 15px 0px 5px 0px;
 
-}
-
-ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    -webkit-justify-content: center; /* Safari 6.1+ */
-    text-align: center;
-    width: 100%;
-}
-
-li {
-    display: inline;
-    -webkit-justify-content: center; /* Safari 6.1+ */
-    text-align: center;
 }
 
 .form-text {
@@ -187,31 +213,34 @@ li {
     font-size: 0.75 em;
     color: #ffffff;
     -webkit-justify-content: center; /* Safari 6.1+ */
-    text-align: center;
+
+}
+
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+    border: 0;
+    padding: 0;
 }
 
 input:not([type=submit]):not([type=file]) {
-   /* omg so much cleaner */
-   width: 100%;
+   /* save typing out all of the different types */
    padding: 12px 12px; /* top & bottom, right and left */
-   margin-left: auto;
-   margin-right: auto;
+   box-sizing : border-box; /* keep in the parent */
    font-size: 0.75em;
 }
 
+
+
 .button {
-    background-color: #4CAF50; /* Green */
-    border: none;
+    background-color: #1fb3cf; /* Light Blue */
+    border: 1px solid #1fb3cf; /* Blue */
     color: white;
-    padding: 14px 25px;
     text-align: center;
     text-decoration: none;
-    font-size: 0.75em;
-    margin-left: 10px;
+    padding: 12px 12px;
+    font-size: 0.9em;
+    box-sizing : border-box;
 }
-
-
-
 
 
 /*
@@ -231,7 +260,7 @@ only screen and (min-resolution: 2dppx) and (max-width: 320px) {
     .dark_blue {
         width: 25%;
     }
-    .light_blue {
+    .orange {
         width: 75%;
     }
 }
@@ -240,7 +269,7 @@ only screen and (min-resolution: 2dppx) and (max-width: 320px) {
     .dark_blue, .green {
         width: 25%;
     }
-    .light_blue {
+    .orange {
         width: 50%;
     }
 }
